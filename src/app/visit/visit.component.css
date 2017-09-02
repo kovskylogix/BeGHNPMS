@@ -1,0 +1,72 @@
+div.row {
+    height:100vh;
+}
+.avatar{
+    width: 50px;
+    height: 50px;
+    border: 1px solid gray;
+    float: center;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+ 
+}
+
+.person-profile{
+    width: 350px;
+    height:350px;
+    border: 1px solid white;
+    margin-bottom: 15px;
+    clear: both;
+}
+
+.profile{
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.span{
+    display: block;
+    padding-bottom: 5px;
+}
+
+.row {
+    border: 1px;
+    margin: 1px;
+    padding: 1px;
+    display: block;
+    overflow: hidden;
+
+}
+
+.fill { 
+    min-height: 100%;
+}
+
+.col-sm-3 {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    overflow: hidden;
+
+}
+ul {
+     padding: 0;
+    margin: 0;
+}
+
+li{
+    padding: 0px;
+    margin: 0px;
+}
+
+.col-sm-6 {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    overflow: hidden;
+
+}
+

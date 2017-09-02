@@ -1,0 +1,49 @@
+[
+    {
+       "patientid": "1",
+        "ssn": "1111111",
+        "firstname": "Adam",
+        "middlename": "Ad",
+        "lastname": "Lamb",
+        "dob": "1/1/2000",
+        "address": [
+            {
+                "streetno": "56-20",
+                "streetname": "Waldron st",
+                "aptno": "3a",
+                "city": "Queens",
+                "state": "NY",
+                "region": "",
+                "postalcode": "10368"
+            }
+        ],
+        "phone": [
+            {"homephone": "7185950466"},
+            {"mobilephone": "6461212112"}
+        ],
+        "email": "Adamad@yahoo.com"
+    },
+    {
+        "patientid": "2",
+        "ssn": "2111111",
+        "firstname": "Bossman",
+        "middlename": "",
+        "lastname": "Byke",
+        "dob": "4/11/1998",
+        "address":[
+            {
+                "streetno": "20",
+                "streetname": "Gone ave",
+                "aptno": "",
+                "city": "Flushing",
+                "state": "NY",
+                "region": "",
+                "postalcode": "10355"
+            }
+        ],
+        "phone": [
+            {"mobilephone": "6463225153"}
+        ],
+        "email": "bossman@yahoo.com"
+    }
+ ]

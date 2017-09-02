@@ -1,0 +1,35 @@
+.person-profile{
+    width: 350px;
+    height:350px;
+    border: 1px solid white;
+    margin-bottom: 15px;
+    clear: both;
+}
+
+.profile{
+    margin-left: 10px;
+    display: inline-block;
+}
+.circle-avatar{
+    width: 110px;
+    height: 110px;
+    border: 1px solid gray;
+    float: left;
+    border-radius:50%;
+}
+
+.circle-img {
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+}
+
+.circle-img img {
+  height: 100%;
+  transform: translateX(-50%);
+  margin-left: 50%;
+}
+.span{
+    display: block;
+    padding-bottom: 5px;
+}

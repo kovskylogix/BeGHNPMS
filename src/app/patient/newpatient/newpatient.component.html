@@ -1,0 +1,108 @@
+<div class="container" width="100px">
+    <div max-width="100%">
+       <h3> New Patient Registration Form</h3>
+         <form #newpatient="ngForm" (ngSubmit)="onSubmit(newpatient.value)" novalidate>
+            <div ngModelGroup="person">
+                <div class="form-group row-fluid form-inline">
+                    <label width="30">First Name:</label>
+                    <input type="text" #firstnameValRef="ngModel" required class="form-control pull-right" name="firstname" placeholder="First Name" ngModel>
+                    <div [hidden]="firstnameValRef.valid || firstnameValRef.pristine" class="alert alert-danger"> 
+                        Please enter a valid name
+                    </div>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>Middle Name:</label>
+                    <input type="text" class="form-control pull-right" name="middlename" placeholder="Middle Name" ngModel>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>Last Name:</label>
+                    <input type="text" #lastnameValRef="ngModel" required class="form-control pull-right" name="lastname" placeholder="Last Name" ngModel>
+                    <div [hidden]="lastnameValRef.valid || lastnameValRef.pristine" class="alert alert-danger"> 
+                        Please enter a valid name
+                    </div>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>Gender:</label>
+                    <select required class="form-control pull-right" title="Gender" name="gender" placeholder="Gender" ngModel>
+                        <option value="">- Select Gender -</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>Marital Status:</label>
+                    <select required class="form-control pull-right" name="maritalstatus" placeholder="Marital Status" ngModel>
+                        <option value="">- Select Marital Status -</option>
+                        <option value="Divorced">Divorced</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Widow">Widow</option>
+                        <option value="Common Law">Common Law</option>
+                    </select>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>Date of Birth:</label>
+                    <input type="date" required class="form-control pull-right" name="dob" placeholder="Date of Birth" ngModel>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>Social Security ID:</label>
+                    <input type="text" #ssnValRef="ngModel"  minlength="9" maxlength="9"  ng-model="ssn" ng-pattern="/^[0-9][0-9]{8}$/" required class="form-control pull-right"  name="ssn"  placeholder="SSN"ngModel>
+                    <div [hidden]="ssnValRef.valid || ssnValRef.pristine"  class="alert alert-danger"> 
+                        Entry is not valid. Please enter a valid SSN
+                    </div>
+                </div>
+            </div>
+            <div ngModelGroup="adress">
+                <div class="form-group row-fluid form-inline">
+                    <label>Street No:</label>
+                    <input type="text" class="form-control pull-right" name="add1" placeholder="Street Number" ngModel>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>Street Name:</label>
+                    <input type="text" class="form-control pull-right" name="add2" placeholder="Street Name" ngModel>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>Apt:</label>
+                    <input type="text" class="form-control pull-right" name="add3" placeholder="Apartment Number" ngModel>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>City:</label>
+                    <input type="text" class="form-control pull-right" name="city" placeholder="City" ngModel>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>State:</label>
+                    <input type="text" class="form-control pull-right" name="state" placeholder="State" ngModel>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>Region:</label>
+                    <input type="text" class="form-control pull-right" name="Region" placeholder="Region" ngModel>
+                </div>
+                <div class="form-group row-fluid form-inline">
+                    <label>Postal Code:</label>
+                    <input type="text" ng-pattern="/^[0-9][0-9]{1,5}$/" class="form-control pull-right" name="zip" placeholder="Postal Code" ngModel>
+                </div>
+            </div>
+            <div ngModelGroup="digitalcontact">
+                    <div class="form-group row-fluid form-inline">
+                        <label>Home Phone:</label>
+                        <input type="text" class="form-control pull-right" name="homephone" placeholder="Home Phone" ngModel>
+                    </div>
+                    <div class="form-group row-fluid form-inline">
+                        <label>Mobile Phone:</label>
+                        <input type="text" class="form-control pull-right" name="mobilephone" placeholder="Mobile Phone" ngModel>
+                    </div>
+                    <div class="form-group row-fluid form-inline">
+                        <label>Email:</label>
+                        <input type="text" class="form-control pull-right" name="email" placeholder="Email Adress" ngModel>
+                    </div>
+            </div>
+             {{newpatient.value | json}}
+            <div>
+                <button type="submit" class="btn btn-cancel pull-center" float-left>Cancel</button>
+                <button [disabled]="!newpatient.form.valid" type="submit" class="btn btn-primary pull-right">Submit</button>
+            </div>
+        </form>
+       
+    </div>
+</div>

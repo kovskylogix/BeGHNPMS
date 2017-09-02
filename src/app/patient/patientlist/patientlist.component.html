@@ -1,0 +1,36 @@
+
+    <hr>
+    <div class="person-profile"> 
+        
+        <div class="img-circle" *ngIf="person.avatar">
+            <img src="..\..\assets\pictures\{{ person.avatar }}" alt="" class="circle-avatar">
+        </div>
+        <div class="img-circle" *ngIf="!person.avatar" >
+        <img src="..\..\assets\pictures\profile-placeholder.png" alt="" class="circle-avatar">
+        </div>
+       
+        <div class="profile">
+            <div (click)="OnSelect(person)">
+                <label>Name: </label>
+                    <!-- <a [routerLink]="['/visit/', person.id]"> -->
+                    <a [routerLink]="['/visit', person.patientid ]">
+                        <strong> {{person.firstname}} {{person.lastname}} </strong>
+                    </a>
+            </div>
+            <div>
+                <label> Patient ID: </label><strong>{{person.patientid}}</strong> <br>
+                <label>DOB: </label>
+                <i> {{ person.dob }} </i>
+            </div>
+            <div *ngIf="person.address.streetname">
+                <label>Address: </label>
+                <i> {{ person.address.streetnumber }} {{ person.address.streetname  }} , {{ person.address.city}}</i>
+            </div>
+            <div *ngIf="person.homephone">
+                <label>Contact: </label>
+                <i> {{ person.homephone }} </i>
+            </div>
+        </div>
+        
+    </div>
+    

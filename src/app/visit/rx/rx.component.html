@@ -1,0 +1,10 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">Rx <span class="glyphicon glyphicon-pencil pull-right" data-toggle="modal" data-target="#rxModal"></span></div>
+    <div class="panel-body">
+      <ul>
+            <li *ngFor="let prx of prescriptions">
+              {{ prx.rxname }}  <b color="blue"><{{ prx.treatmentarea }}> </b>
+            </li>
+      </ul>
+    </div>
+</div>

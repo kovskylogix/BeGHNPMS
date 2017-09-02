@@ -1,0 +1,43 @@
+<p>
+  employment works!
+</p>
+
+<div class="container">
+    <h3> New Patient Employer Data</h3>
+    <form #employerform="ngForm" (ngSubmit) ="onSubmit(employerform.value)" novalidate>
+        <div ngModelGroup="employer">
+            <div class="form-group row-fluid form-inline">
+                <label>Employer Name</label>
+                <input type="text" #employernameValRef="ngModel" required class="form-control" name="employername" ngModel>
+                 <div [hidden]="employernameValRef.valid || employernameValRef.pristine" class="alert alert-danger"> 
+                      Please enter a valid employer name
+                 </div>
+            </div>
+        
+        </div>
+        </div>
+        <div ngModelGroup="employeradress">
+            <div class="form-group row-fluid form-inline">
+                <label>Street No</label>
+                <input type="text" class="form-control" name="add1" ngModel>
+            </div>
+             <div class="form-group row-fluid form-inline">
+                <label>Street Name</label>
+                <input type="text" class="form-control" name="add2" ngModel>
+            </div>
+            <div class="form-group row-fluid form-inline">
+                <label>City </label>
+                <input type="text" class="form-control" name="city" ngModel>
+            </div>
+            <div class="form-group row-fluid form-inline">
+                <label>State </label>
+                <input type="text" class="form-control" name="state" ngModel>
+            </div>
+            <div class="form-group row-fluid form-inline">
+                <label>Postal Code </label>
+                <input type="text" ng-pattern="/^[0-9][0-9]{1,5}$/" class="form-control" name="zip" ngModel>
+            </div>
+        </div>
+        <button [disabled]="!employerform.form.valid" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,13 @@
+<p>
+  refvatalsign works!
+</p>
+<div>
+     <select class="form-control">
+      <option *ngFor="let vital of vitalsigns" ngValue="{{vital.vitsignid}}"> {{vital.name}} *{{vital.group}}</option>
+    </select>
+
+    <select [(ngModel)]="selectedValue">
+      <option *ngFor="let v of vitalsigns" [ngValue]="v">{{v.name}}</option>
+    </select>
+  
+</div>

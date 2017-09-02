@@ -1,0 +1,108 @@
+<div class="container">
+     <app-search></app-search>
+</div>
+<div class="container responsive fill" >
+  <div class="container-fluid fill">
+    <div class="row fill">
+      <div class="col-sm-3 fill">
+        <div class="ng-container" text="center">
+          <div class="panel panel-default">
+            <div class="panel-heading caption"> {{person?.firstname}} 
+              <!-- <img src="/../shared/pictures/pat{{person?.id}}.jpg"  class="img-circle avatar" />  -->
+              <div class="img-circle" *ngIf="person?.avatar">
+                  <img src="/../shared/pictures/{{person.avatar}}" alt="" class="img-circle avatar">
+              </div>
+              <div class="img-circle" *ngIf="!person?.avatar" >
+                  <img src="/../shared/pictures/profile-placeholder.png" alt="" class="img-circle avatar">
+              </div>
+               
+            </div>
+            <div class="panel panel-default"> <strong>Last Name:</strong> {{person?.middlename}} {{ person?.lastname }}
+              <div>
+                 <strong> Age: </strong> {{CalculateAge(person?.dob)}} <br>
+                 <strong> DOB: </strong> {{ person?.dob }} <br>
+                 <strong> Pri Phone: </strong> {{ person?.homephone }} <br><br>
+                 <!-- <strong> Last Visit: </strong> {{ lastvisit }} <br><br> -->
+              </div>
+              <div class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapse1">Visits ...</a>
+                    </h4>
+                  </div>
+                  <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                      <ul class="list-group"  >
+                        <li class="list-group-item"  (click)="Onvisithandler($event, visit)" [ngClass]="{'active': selectedItem == visit, 'list-group-item': true}" *ngFor="let visit of visits | klorderbydate : '-VisitDT'">{{visit.VisitDT}}
+                          <span class="badge">{{visit.VisitID}}</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- <div class="panel-footer">...</div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="panel-group"> <!-- collapsible starts -->
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#medscollapse">Current Meds ...</a>
+                    </h4>
+                  </div>
+                  <div id="medscollapse" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <li class="list-group-item" [ngClass]="{'active': selectedItem == item}" (click)="Onvisithandler($event, Item)" *ngFor="let visit of visits | klorderbydate : '-VisitDT'">
+                          {{visit.VisitDT}}<span class="badge">{{visit.VisitID}}</span>
+                      </li>
+                    </div>
+                    <!-- <div class="panel-footer">...</div> -->
+                  </div>
+                </div>
+              </div><!-- collapsible ends -->
+              <div class="panel-group"> <!-- collapsible starts -->
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#allergiescollapse">Allergies ...</a>
+                    </h4>
+                  </div>
+                  <div id="allergiescollapse" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <ul class="list-group" *ngFor="let visit of visits | klorderbydate : '-VisitDT'">
+                        <li class="list-group-item" (click)="Onvisithandler($event, Item)" [ngClass]="{'active': selectedItem == item, 'list-group-item': true}">{{visit.VisitDT}}<span class="badge">{{visit.VisitID}}</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- <div class="panel-footer">...</div> -->
+                  </div>
+                </div>
+              </div><!-- collapsible ends -->
+             </div>
+            </div> 
+        </div>
+      </div>
+      <div class="col-sm-6 container fill">
+        <div class="ng-container" textalign="center">
+          <div class="panel panel-default">
+            <div class="panel-heading">Detail items</div>
+              <div class="panel-body">
+                <vitalsign [visitvitalSigns]="visitvitalsigns" [visitId]="visitID"></vitalsign>
+                <visitsymptom [visitSymptoms]="visitsymptoms" [visitId]="visitID"></visitsymptom>
+                <visitdiagnosis [visitDiagnosis]="visitdiagnosis" [visitId]="visitID"></visitdiagnosis>
+                <visit-rx></visit-rx>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 container fill">
+        <div class="ng-container" text="center">
+          <div class="panel panel-default">
+            <div class="panel-heading">Item History</div>
+            <div class="panel-body">History detail</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

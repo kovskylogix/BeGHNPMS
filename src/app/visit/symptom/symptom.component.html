@@ -1,0 +1,106 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">Symptoms <span class="glyphicon glyphicon-pencil pull-right" data-toggle="modal" data-target="#symptomsModal"></span></div>
+    <div class="panel-body">
+      <ul>
+        <li *ngFor="let symptom of visitSymptoms ">
+          {{ symptom.symptom }} , {{ symptom.severity }} -- ({{ symptom.history}})
+        </li>
+      </ul>
+      <hr />
+      
+      <!-- Modal -->
+      <div class="modal fade" id="symptomsModal" role="dialog">
+        <div class="modal-dialog">
+         <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Reported Syptoms</h4>
+            </div>
+            <div class="modal-body" >
+               <form #symptomdata="ngForm">
+                  <div class="form-group">
+                    <ul>
+                      <li *ngFor="let symptom of visitsymptoms">
+                        {{ symptom.symptom }} , {{ symptom.severity }} -- ({{ symptom.history}}) text-muted
+                        <span class="glyphicon glyphicon-trash pull-right"></span>
+                      </li>
+                    </ul>
+                  </div>
+                </form>
+
+                <a *ngIf="!isAddNewSymptom" (click)="isAddNewSymptom = !isAddNewSymptom">Add New Syptom</a>
+                
+                <div class="row col-sm-10" *ngIf="isAddNewSymptom"  >
+                    Symptom Area: 
+                    <select required class="form-control" name="category" [(ngModel)] = "S" (change)="onSypmtomCategorySelectChange(S)">
+                      <option [ngValue]="category">-- Select area of symptom --</option>
+                      <option *ngFor="let cat of refsymptomscategory "  [ngValue]="cat">{{cat.Category}}
+                    </option>
+                    </select>
+                </div>
+                <form #newSymptom="ngForm" *ngIf="isAddNewSymptom">
+                      <div class="row pull-center col-sm-12 ">
+                          Symptom:<br>
+                          <select required  class="form-control " name="symptom" style="width:auto;" ngModel>
+                            <option [ngValue]="symptom">-- Select Symptom --</option>
+                            <option *ngFor="let symp of refsymptoms | klsymptomfilter : symptomcategory " [ngValue]="symp">{{symp.Symptom}}</option>
+                          </select>
+                      </div>
+                      <div> <p>History </p></div>
+                      <div class="row">
+                              <div class="col-sm-3">
+                                Severity:
+                                <select required  class="form-control " name="severity"  ngModel>
+                                      <option [ngValue]="severity">-- Select Severity --</option>
+                                      <option Value="1" selected>None</option>
+                                      <option Value="2">Minor</option>
+                                      <option Value="3">Medium</option>
+                                      <option Value="4">High</option>
+                                      <option Value="5">Unbearable</option>
+                                  </select>
+                              </div>
+                              <div class="col-sm-2">
+                                Since:
+                                <select required  class="form-control " name="since" ngModel>
+                                  <option Value="1">1</option>
+                                  <option Value="2">2</option>
+                                  <option Value="3">3</option>
+                                  <option Value="4">4</option>
+                                  <option Value="5">5</option>
+                                  <option Value="6">6</option>
+                                  <option Value="7">7</option>
+                                  <option Value="8">8</option>
+                                  <option Value="9">9</option>
+                                  <option Value="10">10</option>
+                                  <option Value="gt 10"> >10</option>
+                                </select>
+                              </div>
+                              <div class="col-sm-3">
+                                Period Since:
+                                <select required  class="form-control" name="period" ngModel>
+                                  <option Value="hour" selected>Hour(s)</option>
+                                  <option Value="day">Day(s)</option>
+                                  <option Value="Week">Week(s)</option>
+                                  <option Value="month">Month(s)</option>
+                                  <option Value="year">Year(s)</option>
+                                </select>
+                              </div>
+                      </div>
+
+                    <div>{{ newSymptom.value | json}}</div>
+                    <div>
+                        <button type="submit" name="submit" class="bt pull-right">Add</button>
+                    </div>
+               </form>
+
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" name="close" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+      </div>
+     </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+@media (min-width: 768px) {
+    .modal-dialog-wide
+    { width: 750px;/* your width */ }
+    }
+    
+    hr {
+      height: 4px;
+      margin-left: 15px;
+      margin-bottom:-3px;
+    }
+    
+    select {
+     /* width: auto; */
+      margin: 0px; 
+      padding: 2px;
+    }
+    
+    .modal {
+      /* position: fixed; */
+      position: fixed;
+      top: 40%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+    }

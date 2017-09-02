@@ -1,0 +1,89 @@
+[ { 
+                      "patientid": "1", 
+                      "firstname": "Gomma" ,
+                      "middlename": "" , 
+                      "lastname": "Pile" ,
+                      "dob": "1/1/1980",
+                      "ssn": "111-222-1111",  
+                      "gender": "male" , 
+                      "maritalstatus": "single" , 
+                      "address":{
+                        "streetnumber": "5620",
+                        "streetname": "Waldron Street", 
+                        "apt": "" ,
+                        "city": "Corona",
+                        "state": "NY",
+                        "region": "",
+                        "postalcode": "11368"
+                      },
+                       "homephone": "718-595-0467" ,
+                       "mobilephone": "718-595-0466" ,
+                       "email":"test@yahoo.com", 
+                       "avatar": "pat1.jpg"
+                  },
+                   { 
+                      "patientid": "2", 
+                      "firstname": "Donald" ,
+                      "middlename": "" , 
+                      "lastname": "Duck" ,
+                      "dob": "1/1/1982",
+                      "ssn": "111-222-1112",  
+                      "gender": "male" , 
+                      "maritalstatus": "Married" , 
+                      "address":{
+                        "streetnumber": "9",
+                        "streetname": "Elm Street", 
+                        "apt": "" ,
+                        "city": "Corona",
+                        "state": "NY",
+                       "region": "",
+                        "postalcode": "11368"
+                      },
+                      "homephone": "718-595-0452" ,
+                      "email":"number2@yahoo.com",
+                      "avatar": "pat2.jpg"
+                    },
+                   { 
+                      "patientid": "3", 
+                      "firstname": "Bugs" ,
+                      "middlename": "" , 
+                      "lastname": "Bunny" ,
+                      "dob": "1/1/1950",
+                      "ssn": "311-222-1113",  
+                      "gender": "male" , 
+                      "maritalstatus": "Single" , 
+                      "address": {
+                        "streetnumber": "50",
+                        "streetname": "Grove Street", 
+                        "apt": "" ,
+                        "city": "Flushing",
+                        "state": "NY",
+                        "region": "",
+                        "postalcode": "11355"
+                      },
+                      "homephone": "718-616-0452" ,
+                      "email":"bugsbynny@yahoo.com", 
+                      "avatar": "pat3.jpg"
+                    },
+                    { 
+                      "patientid": "4", 
+                      "firstname": "Elmer" ,
+                      "middlename": "" , 
+                      "lastname": "Fudd" ,
+                      "dob": "1/1/1920",
+                      "ssn": "011-222-5113",  
+                      "gender": "male" , 
+                      "maritalstatus": "Single" , 
+                      "address": {
+                        "streetnumber": "33",
+                        "streetname": "Cinco de Mayo Rd", 
+                        "apt": "" ,
+                        "city": "Rockland",
+                        "state": "NY",
+                        "region": "",
+                        "postalcode": "11650"
+                      },
+                      "homephone": "762-569-3333" ,
+                      "email":"elmerfudd@yahoo.com"
+                    }
+]

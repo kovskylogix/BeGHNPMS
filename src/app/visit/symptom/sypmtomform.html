@@ -1,0 +1,11 @@
+<div>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+        <div ngModelGroup="symptomgroup">
+            <select required class="form-control pull-right" name="category" style="width:auto;" [(ngModel)] = "S" (change)="onSypmtomCategorySelectChange(S)">
+                <option value="null"  selected  disabled >Select an Category</option>
+                    <option *ngFor="let cat of refsymptomscategory "  [ngValue]="cat">{{cat.Category}}
+                </option>
+            </select>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,16 @@
+<!--
+<button>Add New Patient</button>
+<newpatient (onSubmitted)="onSubmit($event)"></newpatient>
+-->
+<div class="container" max-width="50%">
+    <app-search></app-search>
+    <a routerLink="newpatient">
+        <button (onSubmitted)="OnSubmit($event)"class="btn btn-success pull-right" > Add New Patient</button>
+    </a>
+    <newpatient *ngIf="isAddingNewPatient" (onSubmitted)="OnSubmit($event)"></newpatient>
+    <div>
+        <label>Contains the words</label>
+        <input type="text" [(ngModel)]="filtertext" name="searchtext" />
+    </div>
+    <patientlist [person]="person" *ngFor="let person of patients | customfilter:filtertext"></patientlist>
+</div>
