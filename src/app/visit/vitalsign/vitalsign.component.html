@@ -23,8 +23,8 @@
   </div>
   <div class="panel-body">
     <ul>
-      <li *ngFor="let vital of visitvitalSigns">
-        {{ vital.vitalsignname }} = {{ vital.value }} ({{ vital.measure }})
+      <li *ngFor="let vital of locvisitvitalSigns | klfiltervisitid : locvisitID">
+        {{getrefvitalsignName(vital.VitalSignID)}} = {{ vital.Value }} 
       </li>
     </ul>
 

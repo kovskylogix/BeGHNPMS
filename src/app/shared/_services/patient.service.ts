@@ -43,10 +43,12 @@ export class PatientService {
 
     loadvisitsymptomsfile(){
         return this.http
-        .get('./assets/testdata/fakebackend/visitvitals.json')
+        .get('./assets/testdata/fakebackend/visitsymptoms.json')
         .map(res => res.json());
 
     }
+
+    /*
     loadvisitdiagnosisfile(){
         return this.http
         .get('./assets/testdata/fakebackend/visitvitals.json')
@@ -94,4 +96,6 @@ export class PatientService {
         .map(res => res.json());
 
     }
+
+    */
 }

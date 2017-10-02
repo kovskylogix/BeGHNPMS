@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-visitprocedure',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./visitprocedure.component.css']
 })
 export class VisitprocedureComponent implements OnInit {
+  @Input () locVisitID;
+  @Input () visitProcedures = [];
 
   constructor() { }
 

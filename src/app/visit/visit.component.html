@@ -87,10 +87,12 @@
           <div class="panel panel-default">
             <div class="panel-heading">Detail items</div>
               <div class="panel-body">
-                <vitalsign [visitvitalSigns]="visitvitalsigns" [visitId]="visitID"></vitalsign>
-                <visitsymptom [visitSymptoms]="visitsymptoms" [visitId]="visitID"></visitsymptom>
-                <visitdiagnosis [visitDiagnosis]="visitdiagnosis" [visitId]="visitID"></visitdiagnosis>
+                <visitvitalsign-component [locvisitvitalSigns]="vvisitvitalsigns" [locvisitID]="visitID"></visitvitalsign-component>
+                <visitsymptom-component [locvisitSymptoms]="vvisitsymptoms" [locvisitID]="visitID"></visitsymptom-component>
+               <!--
+                <visitdiagnosis [visitDiagnosis]="visitdiagnosis" [locVisitID]="visitID"></visitdiagnosis>
                 <visit-rx></visit-rx>
+               -->
               </div>
           </div>
         </div>

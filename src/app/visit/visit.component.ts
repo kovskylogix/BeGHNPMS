@@ -32,8 +32,8 @@ person;
 visitlist;
 visitID;
 
-visitvitalsigns;
-visitsymptoms;
+vvisitvitalsigns;
+vvisitsymptoms;
 visitdiagnosis;
 visitprognosis;
 visitprocedures;
@@ -48,7 +48,7 @@ public age: number;
 @Output() visits=[];
 
   constructor(private patientService: PatientService, 
-              private activatedRoute: ActivatedRoute, 
+              private activatedRoute: ActivatedRoute,
               private custfilterbypatientid: CustomfilterbypatientidPipe,
               private klfiltervisitid: KlfiltervisitidPipe
               ){ 
@@ -56,68 +56,74 @@ public age: number;
     this.patientid = this.activatedRoute.snapshot.params['id'];
 
     this.patientService.loadpatientfile()
-      .subscribe(data => { this.patients = data; 
-      this.person = custfilterbypatientid.transform(this.patients, this.patientid)[0]; 
+      .subscribe(data => { this.patients = data;
+      this.person = custfilterbypatientid.transform(this.patients, this.patientid)[0];
       console.log(this.person);
     });
-    
-    
+
+
     this.patientService.loadvisitfile()
-     .subscribe(data => { this.visitlist = data; 
+     .subscribe(data => { this.visitlist = data;
      this.visits =custfilterbypatientid.transform(this.visitlist, this.patientid);
      console.log(this.visits);
     });
-    
+
   this.patientService.loadvisitvitalsfile()
-     .subscribe(data => { this.visitvitalsigns = data; 
-     //this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
-     console.log(this.visitvitalsigns);
+     .subscribe(data => { this.vvisitvitalsigns = data;
+     console.log('this is the value of data recieved form service');
+     console.log(this.vvisitvitalsigns);
+     // this.vvisitvitalsigns = klfiltervisitid.transform(this.vvisitvitalsigns, this.visitID);
+     console.log('this is the value of this.vvisitvitalsigns');
+     console.log(this.vvisitvitalsigns);
   });
-
+ 
   this.patientService.loadvisitsymptomsfile()
-    .subscribe(data => { this.visitsymptoms = data; 
-    //this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
-    console.log(this.visitsymptoms);
+    .subscribe(data => { this.vvisitsymptoms = data;
+     console.log('coming through this.vvisitsymptoms');
+     console.log(data);
+    // this.vvisitsymptoms = klfiltervisitid.transform(this.vvisitsymptoms, this.visitID);
+    console.log(this.vvisitsymptoms);
   });
-
+  /*
   this.patientService.loadvisitdiagnosisfile()
-  .subscribe(data => { this.visitprognosis = data; 
-  //this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
-  console.log(this.visitprognosis);
-});
+    .subscribe(data => { this.visitprognosis = data;
+    // this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
+    console.log(this.visitprognosis);
+  });
 
   this.patientService.loadvisitprognosisfile()
-  .subscribe(data => { this.visitprognosis = data; 
-  //this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
-  console.log(this.visitprognosis);
-});
+    .subscribe(data => { this.visitprognosis = data;
+    //this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
+    console.log(this.visitprognosis);
+  });
 
   this.patientService.loadvisitproceduresfile()
-    .subscribe(data => { this.visitprocedures = data; 
-    //this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
+    .subscribe(data => { this.visitprocedures = data;
+    // this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
     console.log(this.visitprocedures);
   });
 
   this.patientService.loadvisitlabtestsfile()
-    .subscribe(data => { this.visitlabtests = data; 
-    //this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
+    .subscribe(data => { this.visitlabtests = data;
+    // this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
     console.log(this.visitlabtests);
   });
 
   this.patientService.loadvisitnotesfile()
-    .subscribe(data => { this.visitnotes = data; 
-    //this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
+    .subscribe(data => { this.visitnotes = data;
+    // this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
     console.log(this.visitnotes);
   });
 
   this.patientService.loadvisitofficenotesfile()
-    .subscribe(data => { this.visitofficenotes = data; 
-    //this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
+    .subscribe(data => { this.visitofficenotes = data;
+    // this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
     console.log(this.visitofficenotes);
   });
-  }
-  
-  
+  */
+}
+
+
 
   ngOnInit() {
   }
@@ -126,15 +132,17 @@ public age: number;
    // console.log(newValue.VisitID);
     this.visitID = newValue.VisitID;
     console.log(this.visitID);
+    console.log('showing this.vvisitsymptoms in event handler changed');
+    console.log(this.vvisitsymptoms);
   }
- 
+
    public CalculateAge(birthdate): number
      {
          if(birthdate){
             var timeDiff = Math.abs(Date.now() - Number(new Date(birthdate)));
-            //Used Math.floor instead of Math.ceil
-            //so 26 years and 140 days would be considered as 26, not 27.
-            return Math.floor((timeDiff / (1000 * 3600 * 24))/365);
+            // Used Math.floor instead of Math.ceil
+            // so 26 years and 140 days would be considered as 26, not 27.
+            return Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
         }
 
         return 0;

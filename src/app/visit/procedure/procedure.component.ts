@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
   styleUrls: ['./procedure.component.css']
 })
 export class ProcedureComponent implements OnInit {
-  @Input () visitId;
+  @Input () locVisitID;
   @Input () visitProcedures = [];
 
   

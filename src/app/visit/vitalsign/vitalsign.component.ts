@@ -6,29 +6,30 @@ import {Subject, Observable} from 'rxjs/Rx';
 
 
 @Component({
-  selector: 'vitalsign',
+  selector: 'visitvitalsign-component',
   templateUrl: './vitalsign.component.html',
   styleUrls: ['./vitalsign.component.css'],
   providers:[]
 })
 export class VitalsignComponent implements OnInit {
-@Input () visitId;
-@Input () visitvitalSigns = [];
+@Input () locvisitID;
+@Input () locvisitvitalSigns = [];
 @Input () refvitalsigns = [];
 jsonObs;
 
-  constructor(dictionaryitemsService: DictionaryitemsService) { 
-              dictionaryitemsService.getcachedData()
+  constructor(dictitemsServ: DictionaryitemsService) {
+              dictitemsServ.getcachedData()
               .subscribe(data => { this.jsonObs = data;
                 this.refvitalsigns = this.jsonObs.vitalsigns;
+                console.log()
               });
 
-  }
+           }
 
 
   ngOnInit() {
     }
-  
+
  getrefvitalsigns(id){
     return this.refvitalsigns.find(x => x.VitalSignID == id);
   }

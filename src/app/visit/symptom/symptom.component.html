@@ -2,8 +2,8 @@
     <div class="panel-heading">Symptoms <span class="glyphicon glyphicon-pencil pull-right" data-toggle="modal" data-target="#symptomsModal"></span></div>
     <div class="panel-body">
       <ul>
-        <li *ngFor="let symptom of visitSymptoms ">
-          {{ symptom.symptom }} , {{ symptom.severity }} -- ({{ symptom.history}})
+        <li *ngFor="let symp of locvisitSymptoms | klfiltervisitid : locvisitID">
+          {{ symp.Symptom }} , {{ symp.Severity }} -- Since:  {{ symp.History.unit}} {{ symp.History.Peroid}} 
         </li>
       </ul>
       <hr />
@@ -22,7 +22,7 @@
                   <div class="form-group">
                     <ul>
                       <li *ngFor="let symptom of visitsymptoms">
-                        {{ symptom.symptom }} , {{ symptom.severity }} -- ({{ symptom.history}}) text-muted
+                        {{DescribeSypmtom(symptom.symptom) }} , {{ symptom.severity }} -- ({{ symptom.history}}) text-muted
                         <span class="glyphicon glyphicon-trash pull-right"></span>
                       </li>
                     </ul>

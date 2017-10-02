@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as _ from 'lodash'; 
+import * as _ from 'lodash';
 
 @Pipe({
   name: 'klunique',
@@ -11,7 +11,7 @@ export class KluniquePipe implements PipeTransform {
         if(array!== undefined && args!== null){
              return _.uniqBy(array, args);
         }
-        
+
         return null;
     }
 }

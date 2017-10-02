@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
   styleUrls: ['./diagnosis.component.css']
 })
 export class DiagnosisComponent implements OnInit {
-  @Input () visitId;
+  @Input () locVisitID;
   @Input () visitDiagnosis = [];
 
 
