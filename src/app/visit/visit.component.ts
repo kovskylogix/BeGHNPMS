@@ -1,6 +1,6 @@
-import { Component, OnInit,Input, Output, EventEmitter} from '@angular/core';
-import { VitalsignComponent } from './vitalsign/vitalsign.component';
-import { SymptomComponent } from './symptom/symptom.component';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { VitalsignComponent } from './visitvitalsign/visitvitalsign.component';
+import { SymptomComponent } from './visitsymptom/visitsymptom.component';
 import { DiagnosisComponent } from './diagnosis/diagnosis.component';
 import { RxComponent } from './rx/rx.component';
 import { PatientComponent } from '../patient/patient.component';
@@ -15,7 +15,7 @@ import { ActivatedRoute} from '@angular/router';
 
 
 @Component({
-  selector: 'visit',
+  selector: 'app-visit',
   templateUrl: './visit.component.html',
   styleUrls: ['./visit.component.css'],
   providers: [ VitalsignComponent, SymptomComponent, DiagnosisComponent, 
@@ -34,8 +34,8 @@ visitID;
 
 vvisitvitalsigns;
 vvisitsymptoms;
-visitdiagnosis;
-visitprognosis;
+vvisitdiagnosis;
+vvisitprognosis;
 visitprocedures;
 visitlabtests;
 visitrxs;
@@ -51,8 +51,7 @@ public age: number;
               private activatedRoute: ActivatedRoute,
               private custfilterbypatientid: CustomfilterbypatientidPipe,
               private klfiltervisitid: KlfiltervisitidPipe
-              ){ 
-
+              ) { 
     this.patientid = this.activatedRoute.snapshot.params['id'];
 
     this.patientService.loadpatientfile()
@@ -84,13 +83,14 @@ public age: number;
     // this.vvisitsymptoms = klfiltervisitid.transform(this.vvisitsymptoms, this.visitID);
     console.log(this.vvisitsymptoms);
   });
-  /*
+ 
   this.patientService.loadvisitdiagnosisfile()
-    .subscribe(data => { this.visitprognosis = data;
+    .subscribe(data => { this.vvisitdiagnosis = data;
     // this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);
-    console.log(this.visitprognosis);
+    console.log(this.vvisitdiagnosis);
   });
 
+ /*
   this.patientService.loadvisitprognosisfile()
     .subscribe(data => { this.visitprognosis = data;
     //this.visitvitalsigns = klfiltervisitid.transform(this.visitvitalsigns, this.visitID);

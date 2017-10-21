@@ -19,10 +19,10 @@ import { NewpatientComponent } from './patient/newpatient/newpatient.component';
 
 
 import { VisitComponent } from './visit/visit.component';
-import { VitalsignComponent} from './visit/vitalsign/vitalsign.component';
+import { VitalsignComponent} from './visit/visitvitalsign/visitvitalsign.component';
 import { DiagnosisComponent } from './visit/diagnosis/diagnosis.component';
 import { ProcedureComponent } from './visit/procedure/procedure.component';
-import { SymptomComponent } from './visit/symptom/symptom.component';
+import { SymptomComponent } from './visit/visitsymptom/visitsymptom.component';
 import { RxComponent } from './visit/rx/rx.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { DocumentComponent } from './document/document.component';

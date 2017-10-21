@@ -3,14 +3,14 @@ import {DictionaryitemsService } from '../../shared/_services/dictionaryitems.se
 import { KluniquePipe } from '../../shared/klpipes/klunique.pipe';
 
 @Component({
-  selector: 'visitsymptom-component',
-  templateUrl: './symptom.component.html',
-  styleUrls: ['./symptom.component.css'],
-  providers: [DictionaryitemsService ,KluniquePipe]
+  selector: 'app-visitsymptom',
+  templateUrl: './visitsymptom.component.html',
+  styleUrls: ['./visitsymptom.component.css'],
+  providers: [DictionaryitemsService , KluniquePipe]
 })
 export class SymptomComponent implements OnInit {
 
-@Output() onSypmtomCategoryChanged:EventEmitter<any> = new EventEmitter();
+@Output() onSypmtomCategoryChanged: EventEmitter<any> = new EventEmitter();
 @Input () locvisitID;
 @Input () locvisitSymptoms = [];
 
@@ -41,13 +41,13 @@ jsonObs;
   }
 
 
-  onSypmtomCategorySelectChange(symptomCat){
+  onSypmtomCategorySelectChange(symptomCat) {
     this.symptomcategory = symptomCat.Category;
-    console.log('$$$$$$$$$$$$');
-    console.log(symptomCat.Category);
   }
 
-  DescribeSypmtom(symptomid){
-    return this.refsymptoms.find(x => x.SymptomID === symptomid).Symptom.toString();
+  describeSypmtom(id) {
+      return (this.refsymptoms.find(x => x.SymptomID === id)).Symptom;
   }
+ 
+
 }

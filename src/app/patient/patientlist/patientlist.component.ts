@@ -8,15 +8,15 @@ import {Router} from '@angular/router';
 })
 export class PatientlistComponent implements OnInit {
   @Input() person;
-  
-  filterObject ={name:''}
+
+  filterObject = {name: '' };
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
-  
-  OnSelect(person){
+
+  OnSelect(person) {
     this.router.navigate(['/visit', person.patientid, person]);
   }
 }

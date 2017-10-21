@@ -6,9 +6,9 @@ import {Subject, Observable} from 'rxjs/Rx';
 
 
 @Component({
-  selector: 'visitvitalsign-component',
-  templateUrl: './vitalsign.component.html',
-  styleUrls: ['./vitalsign.component.css'],
+  selector: 'app-visitvitalsign',
+  templateUrl: './visitvitalsign.component.html',
+  styleUrls: ['./visitvitalsign.component.css'],
   providers:[]
 })
 export class VitalsignComponent implements OnInit {
