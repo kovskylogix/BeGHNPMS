@@ -24,7 +24,7 @@ import { DiagnosisComponent } from './visit/diagnosis/diagnosis.component';
 import { ProcedureComponent } from './visit/procedure/procedure.component';
 import { SymptomComponent } from './visit/symptom/symptom.component';
 import { RxComponent } from './visit/rx/rx.component';
-import { AppointmentComponent } from './appointment/appointment.component';
+// import { AppointmentComponent } from './appointment/appointment.component';
 import { DocumentComponent } from './document/document.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
@@ -56,7 +56,7 @@ import { KlsymptomfilterPipe } from './shared/klpipes/klsymptomfilter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents, 
+    routingComponents,
     NavigComponent,
     RefvatalsignComponent,
     VitalsignComponent,
@@ -66,16 +66,16 @@ import { KlsymptomfilterPipe } from './shared/klpipes/klsymptomfilter.pipe';
     RxComponent,
     LoginComponent,
     SearchComponent,
-    CustomfilterPipe,        
-    TestpageComponent, 
-    CustomfilterbypatientidPipe, 
-    KlorderbyPipe, 
-    KlorderbyascPipe, /*KlorderbydscPipe,*/ 
-    KlorderbydatePipe, 
-    KlfiltervisitidPipe, 
-    KlfilteridPipe, 
-    DictionaryitemsComponent, 
-    FilterrefvitalsignsPipe, 
+    CustomfilterPipe,
+    TestpageComponent,
+    CustomfilterbypatientidPipe,
+    KlorderbyPipe,
+    KlorderbyascPipe, /*KlorderbydscPipe,*/
+    KlorderbydatePipe,
+    KlfiltervisitidPipe,
+    KlfilteridPipe,
+    DictionaryitemsComponent,
+    FilterrefvitalsignsPipe,
     KluniquePipe, KlsymptomfilterPipe
   ],
   imports: [
@@ -83,11 +83,11 @@ import { KlsymptomfilterPipe } from './shared/klpipes/klsymptomfilter.pipe';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-  
+
   ],
   providers: [PatientService, VisitService, DictionaryitemsService
   ],
   bootstrap: [AppComponent, [DictionaryitemsComponent]]
-  
+
 })
 export class AppModule { }

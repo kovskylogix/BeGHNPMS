@@ -28,10 +28,6 @@ jsonObs;
               this.refsymptoms = this.jsonObs.symptoms;
               this.refsymptomscategory = this.kluniquepipe.transform(this.refsymptoms, 'Category');
               // this.refsymptomscategory = this.refsymptoms
-              console.log('In Symptoms component ...' );
-              console.log(this.refsymptoms );
-              console.log(this.refsymptomscategory );
-              console.log(this.locvisitSymptoms);
               });
 
   }
@@ -47,7 +43,7 @@ jsonObs;
     console.log(symptomCat.Category);
   }
 
-  DescribeSypmtom(symptomid){
+  DescribeSymptom(symptomid){
     return this.refsymptoms.find(x => x.SymptomID === symptomid).Symptom.toString();
   }
 }

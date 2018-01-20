@@ -3,7 +3,7 @@
     <div class="panel-body">
       <ul>
         <li *ngFor="let symp of locvisitSymptoms | klfiltervisitid : locvisitID">
-          {{ symp.Symptom }} , {{ symp.Severity }} -- Since:  {{ symp.History.unit}} {{ symp.History.Peroid}} 
+         <b> {{DescribeSymptom(symp.Symptom)}} </b> {{ symp.Severity }} - <b> {{ symp.History.unit}}{{ symp.History.Peroid }}</b> 
         </li>
       </ul>
       <hr />
@@ -21,11 +21,11 @@
                <form #symptomdata="ngForm">
                   <div class="form-group">
                     <ul>
-                      <li *ngFor="let symptom of visitsymptoms">
-                        {{DescribeSypmtom(symptom.symptom) }} , {{ symptom.severity }} -- ({{ symptom.history}}) text-muted
-                        <span class="glyphicon glyphicon-trash pull-right"></span>
+                      <li *ngFor="let symp of locvisitSymptoms | klfiltervisitid : locvisitID">
+                        <b>{{DescribeSymptom(symp.Symptom)}}</b> {{ symp.Severity }} <b>{{ symp.History.unit}}{{ symp.History.Peroid }} </b>
                       </li>
                     </ul>
+                    <hr />
                   </div>
                 </form>
 
@@ -34,7 +34,7 @@
                 <div class="row col-sm-10" *ngIf="isAddNewSymptom"  >
                     Symptom Area: 
                     <select required class="form-control" name="category" [(ngModel)] = "S" (change)="onSypmtomCategorySelectChange(S)">
-                      <option [ngValue]="category">-- Select area of symptom --</option>
+                      <option [ngValue]="category"> Select area of symptom </option>
                       <option *ngFor="let cat of refsymptomscategory "  [ngValue]="cat">{{cat.Category}}
                     </option>
                     </select>
